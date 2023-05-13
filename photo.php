@@ -87,12 +87,13 @@ session_start();
     <!--sidebar start-->
     <div class="sidebar">
       <center>
-        <img src="img/download.png" class="profile_image" alt="">
+        <img src="Images/download.png" class="profile_image" alt="">
         <h4> Admin </h4>
       </center>
       <a href="managemem.php"><i class="fas fa-desktop"></i><span>Manage Members</span></a>
       <a href="addnotice.php"><i class="fas fa-bullhorn"></i><span>Add Notice</span></a>
       <a href="viewcomplaints.php" class="active"><i class="fas fa-envelope-open-text"></i><span>View Complaints</span></a>
+      <a href="viewpayment.php" ><i class="fas fa-file-invoice-dollar"></i><span>View Payments</span></a>
       <a href="photo.php"><i class="fas fa-camera-retro"></i><span>Photo Gallery</span></a>
       <!-- <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
       <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a> -->
@@ -121,7 +122,7 @@ session_start();
         while($images  = mysqli_fetch_assoc($res)){ ?>
 
 <div class="alb">
-  <img src="img/<?=$images['image_url']?>" >
+  <img src="Images/<?=$images['image_url']?>" >
 </div>
 
 <?php  } }?>  

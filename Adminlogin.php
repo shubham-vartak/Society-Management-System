@@ -33,7 +33,7 @@
 <body>
 <div class="page">
        <div class="navbar">
-           <img src="img/shlogo.jpg" class="logo">
+           <img src="Images/shlogo.jpg" class="logo">
            <h1>Society<span style="font-family: 'Merienda', cursive;
             color:rgb(20, 76, 80);">HUB</span></h1>
            <nav>
@@ -46,14 +46,14 @@
        </div>
        <div class="row">
         <div class="col-1">
-             <img src="img/building1.jpg" >
+             <img src="Images/building1.jpg" >
         </div> 
         <div class="col-2">
            <div class="form-container1">
                <div class="adminfbtn">
                    <h1>Admin Login</h1>
                </div>
-               <img src="img/adminlogin.jpg" class="admimg" alt="">
+               <img src="Images/adminlogin.jpg" class="admimg" alt="">
                <form action="Adminlogin.php" method="POST">
                     <input type="text" placeholder="Username" name="username" required>
                     <input type="text" placeholder="Admin Code" name="admincode" required>
