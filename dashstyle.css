@@ -125,7 +125,7 @@ body{
   .content{
     margin-left: 250px;
     overflow: auto;
-    background: url(img/background.png) no-repeat;
+    background: url(Images/background.png) no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;

@@ -1,12 +1,5 @@
 <?php
 session_start();
-
-
-// if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-//     header("location: Adminlogin.php");
-//     exit;
-// }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,18 +11,6 @@ session_start();
     <link rel="stylesheet" href="dashstyle.css">
     <script src="https://kit.fontawesome.com/2edfbc5391.js"crossorigin="anonymous"></script>
     <style>
-
-/* .container:after{
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 90%;
-	left: 0;
-	top: 0; */
-
-	/* background-size: cover; */
-	/* filter: blur(50px);
-	z-index: -1; */
 }
 .contact-box{
 	max-width: 850px;
@@ -53,18 +34,6 @@ h2{
 	margin-bottom: 10px;
   font-size: 35px;
 }
-
-/* h2:after{
-	content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    height: 4px;
-    width: 50px;
-    border-radius: 2px;
-    background-color: #19B3D3;
-} */
 
 .field{
 	width: 50%;
@@ -125,12 +94,13 @@ textarea{
     <!--sidebar start-->
     <div class="sidebar">
       <center>
-        <img src="img/download.png" class="profile_image" alt="">
+        <img src="Images/download.png" class="profile_image" alt="">
         <h4> Admin </h4>
       </center>
       <a href="managemem.php"><i class="fas fa-desktop"></i><span>Manage Members</span></a>
       <a href="addnotice.php"class="active"><i class="fas fa-bullhorn"></i><span>Add Notice</span></a>
       <a href="viewcomplaints.php"><i class="fas fa-envelope-open-text"></i><span>View Complaints</span></a>
+      <a href="viewpayment.php" ><i class="fas fa-file-invoice-dollar"></i><span>View Payments</span></a>
       <a href="photo.php"><i class="fas fa-camera-retro"></i><span>Photo Gallery</span></a>
       <!-- <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
       <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a> -->

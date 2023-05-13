@@ -61,12 +61,13 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <!--sidebar start-->
     <div class="sidebar">
       <center>
-        <img src="img/download.png" class="profile_image" alt="">
+        <img src="Images/download.png" class="profile_image" alt="">
         <h4> <?php echo $_SESSION['username']?> </h4>
       </center>
       <a href="Welcome.php" class="active"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
       <a href="noticebrd.php"><i class="fas fa-bullhorn"></i><span>Notice Board</span></a>
       <a href="complaint.php"><i class="fas fa-envelope-open-text"></i><span>Register Complaint</span></a>
+      <a href="payment.php"><i class="fas fa-file-invoice-dollar"></i><span>Maintenance Payment</span></a>
       <a href="userphoto.php"><i class="fas fa-camera-retro"></i><span>Photo Gallery</span></a>
       <!-- <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
       <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a> -->
