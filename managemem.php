@@ -127,6 +127,19 @@ session_start();
     $connection = mysqli_connect("localhost","root","");
     $db = mysqli_select_db($connection,'usersregister');
 
+    // Handle activation request within the same file
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['activate'])) {
+      $id = $_POST['Id'];
+      $query = "UPDATE registration SET active = 1 WHERE Id = '$id'";
+      $query_run = mysqli_query($connection, $query);
+
+    if ($query_run) {
+      echo "<script>alert('User activated successfully!'); window.location.href='managemem.php';</script>";
+    } else {
+      echo "<script>alert('Failed to update status!'); window.location.href='managemem.php';</script>";
+    }
+    }
+
     $query = "Select * from registration";
     $query_run = mysqli_query($connection,$query);
     ?>
@@ -141,6 +154,7 @@ session_start();
       <th>No. of family Members</th>
       <th>Update</th>
       <th>Delete</th>
+      <th>Status</th>
 
     </tr>
   </thead>
@@ -169,6 +183,17 @@ session_start();
         <input type="hidden" name="Id" value="<?php echo $row['Id']?>">
         <td><input type="submit" name="delete" class="Table_btn" value="Delete"> </td>
       </form>
+
+      <td>
+              <?php if ($row['active'] == 1) { ?>
+                <button class="Table_btn" style="background-color: green; color: white;" disabled>Active</button>
+              <?php } else { ?>
+                <form action="" method="post">
+                  <input type="hidden" name="Id" value="<?php echo $row['Id']; ?>">
+                  <input type="submit" name="activate" class="Table_btn" style="background-color: red; color: white;" value="Activate">
+                </form>
+              <?php } ?>
+            </td>
       
     </tr>
     </tbody>

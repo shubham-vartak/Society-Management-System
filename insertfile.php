@@ -26,7 +26,7 @@ if (!$conn){
 else{
     // submitting to database
     
-    $sql = "INSERT INTO `registration` ( `Username`, `Email`, `Flatno`, `MobileNo`, `nno of family members`, `Password`) VALUES ( '$Username', '$email', '$flatno', '$mobileno', '$familymem', '$Password')";
+    $sql = "INSERT INTO `registration` ( `Username`, `Email`, `Flatno`, `MobileNo`, `nno of family members`, `Password`, `active`) VALUES ( '$Username', '$email', '$flatno', '$mobileno', '$familymem', '$Password', '0')";
     $result = mysqli_query($conn, $sql);
 
     if($result){

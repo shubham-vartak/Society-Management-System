@@ -1,6 +1,5 @@
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Username = $_POST['username'];
     $email = $_POST['email'];
     $flatno = $_POST['flatno'];
@@ -9,37 +8,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Password = $_POST['password'];
 }
 
-// connecting to database
-
+// Connecting to the database
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "usersregister";
 
-// creating connection
-
+// Creating connection
 $conn = mysqli_connect($servername, $username, $password, $database);
-// die if connection was not successfull
 
-if (!$conn){
-    die("Sorry we failed to connect:". mysqli_connect_error());
-}
-else{
-    // submitting to database
-    
-    $sql = "INSERT INTO `registration` ( `Username`, `Email`, `Flatno`, `MobileNo`, `nno of family members`, `Password`) VALUES ( '$Username', '$email', '$flatno', '$mobileno', '$familymem', '$Password')";
+// Die if connection was not successful
+if (!$conn) {
+    die("Sorry, we failed to connect: " . mysqli_connect_error());
+} else {
+    // Submitting to database
+    $sql = "INSERT INTO `registration` (`Username`, `Email`, `Flatno`, `MobileNo`, `nno of family members`, `Password`, `active`) 
+            VALUES ('$Username', '$email', '$flatno', '$mobileno', '$familymem', '$Password', '0')";
     $result = mysqli_query($conn, $sql);
 
-    if($result){
-        echo "<script>alert('Registration successfull...you may now login.');
-        window.location.href = 'login.html';
-        </script>";
-    }
-    else{
-        echo "<script>alert('Registration Failed...Please try again.!!');
-        window.location.href = 'login.html';
-        </script>";
-
+    if ($result) {
+        echo "<script>
+                alert('Registration successful...you can login after admin\'s approval.');
+                window.location.href = 'login.html';
+              </script>";
+        exit(); 
+    } else {
+        echo "<script>
+                alert('Registration Failed...Please try again.!!');
+                window.location.href = 'login.html';
+              </script>";
+        exit();
     }
 }
 ?>
